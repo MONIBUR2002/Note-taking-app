@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Palette Wave</string>
+    <string name="login_button_text">Log in</string>
+    <string name="sign_button_text">Sign up</string>
+</resources>
