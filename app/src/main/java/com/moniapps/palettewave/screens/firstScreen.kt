@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import com.moniapps.palettewave.ui.theme.PaletteWaveTheme
 
 @Composable
-fun FirstScreen() {
+fun NoteScreen() {
     Surface(
         modifier = Modifier
             .padding(16.dp)
@@ -22,6 +22,6 @@ fun FirstScreen() {
 @Composable
 fun FirstScreenPreview() {
     PaletteWaveTheme {
-    FirstScreen()
+    NoteScreen()
     }
 }
