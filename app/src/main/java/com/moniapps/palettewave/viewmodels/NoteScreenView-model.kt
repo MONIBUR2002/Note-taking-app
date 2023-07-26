@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
-class NoteScreenViewmodel() : ViewModel(){
+class NoteScreenViewmodel : ViewModel(){
     var titleText by mutableStateOf("")
         private set
     fun onTitleTextChange(title:String){
@@ -16,9 +16,5 @@ class NoteScreenViewmodel() : ViewModel(){
     fun onDescriptionChange(description:String){
         descriptionText = description
     }
-    fun onButtonClick(){
-        if (titleText.isEmpty()&&descriptionText.isEmpty()){
 
-        }
-    }
 }

@@ -56,13 +56,14 @@ fun TextInput(
 }
 
 @Composable
-fun saveButton(
+fun SaveButton(
     buttonName: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+
     Button(
-        onClick = { onClick },
+        onClick =  onClick ,
         colors = ButtonDefaults.buttonColors(
             containerColor = Color.Blue
         ),
@@ -76,7 +77,7 @@ fun saveButton(
 fun NoteRow(
     modifier: Modifier = Modifier,
     note: Note,
-    onNoteClick: () -> Unit
+    onNoteClick: (note:Note) -> Unit
 ) {
     Surface(
         modifier = Modifier
@@ -89,7 +90,9 @@ fun NoteRow(
         Column(
             modifier
                 .padding(8.dp)
-                .clickable { },
+                .clickable {
+                           onNoteClick(note)
+                },
             horizontalAlignment = Alignment.Start
         ) {
             Text(
