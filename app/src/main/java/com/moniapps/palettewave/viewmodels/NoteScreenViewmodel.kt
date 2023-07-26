@@ -16,4 +16,9 @@ class NoteScreenViewmodel() : ViewModel(){
     fun onDescriptionChange(description:String){
         descriptionText = description
     }
+    fun onButtonClick(){
+        if (titleText.isEmpty()&&descriptionText.isEmpty()){
+
+        }
+    }
 }

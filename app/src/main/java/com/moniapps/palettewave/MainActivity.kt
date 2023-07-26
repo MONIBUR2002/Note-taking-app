@@ -9,6 +9,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.moniapps.palettewave.data.noteDateSource
+import com.moniapps.palettewave.model.Note
 import com.moniapps.palettewave.screens.NoteScreen
 import com.moniapps.palettewave.ui.theme.PaletteWaveTheme
 
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    NoteScreen()
+                    NoteScreen(notes = noteDateSource().loadNotes(), onAddNote = {}, onRemoveNote = {})
                 }
             }
         }
@@ -32,6 +34,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     PaletteWaveTheme {
-        NoteScreen()
+        NoteScreen(notes = emptyList(), onAddNote = {}, onRemoveNote = {})
     }
 }
