@@ -69,7 +69,9 @@ fun SaveButton(
         ),
         modifier = modifier
     ) {
-        Text(text = buttonName, fontSize = 24.sp)
+        Text(text = buttonName, fontSize = 24.sp,
+        color = Color.White
+        )
     }
 }
 
@@ -77,7 +79,7 @@ fun SaveButton(
 fun NoteRow(
     modifier: Modifier = Modifier,
     note: Note,
-    onNoteClick: (note:Note) -> Unit
+    onNoteClick: (Note) -> Unit
 ) {
     Surface(
         modifier = Modifier
@@ -101,10 +103,11 @@ fun NoteRow(
             )
             Text(
                 text = note.description,
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(bottom = 8.dp)
             )
             Text(
-                text = note.entryDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),
+                text = note.entryDate.format(DateTimeFormatter.ofPattern("h:mm a   dd.MM.yyyy ")),
                 style = MaterialTheme.typography.bodySmall
             )
 

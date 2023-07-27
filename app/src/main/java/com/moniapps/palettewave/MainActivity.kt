@@ -25,17 +25,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val notes = remember {
-                        mutableStateListOf<Note>()
-                    }
-                    NoteScreen(
-                        notes = notes,
-                        onAddNote = {
-                            notes.add(it)
-                        }, onRemoveNote = {
-                        notes.remove(it)
-                        }
-                    )
+
+                    NoteScreen()
                 }
             }
         }
@@ -45,6 +36,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     PaletteWaveTheme {
-        NoteScreen(notes = emptyList(), onAddNote = {}, onRemoveNote = {})
+
     }
 }

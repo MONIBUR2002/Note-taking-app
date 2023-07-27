@@ -35,12 +35,10 @@ import com.moniapps.palettewave.viewmodels.NoteScreenViewmodel
 @Composable
 fun NoteScreen(
     vm: NoteScreenViewmodel = viewModel(),
-    notes: List<Note>,
-    onAddNote: (Note) -> Unit,
-    onRemoveNote: (Note) -> Unit,
     context: Context = LocalContext.current
 ) {
-
+    val notes = vm.noteList
+    val note = Note(title = vm.titleText, description = vm.descriptionText)
     Column {
         TopAppBar(
             title = {
@@ -80,10 +78,8 @@ fun NoteScreen(
                 SaveButton(
                     buttonName = "Save",
                     onClick = {
-                        if (vm.titleText.isNotEmpty() && vm.descriptionText.isNotEmpty()) {
-                            onAddNote(Note(title = vm.titleText, description = vm.descriptionText))
-                            Toast.makeText(context, "Note added", Toast.LENGTH_SHORT).show()
-                        }
+                    if (vm.onAddNote(note)) Toast.makeText(context, "Note added", Toast.LENGTH_SHORT).show()
+                    else Toast.makeText(context, "Title or Description is empty", Toast.LENGTH_SHORT).show()
                     },
                     modifier = Modifier
                         .padding(top = 8.dp)
@@ -95,22 +91,12 @@ fun NoteScreen(
                         NoteRow(
                             note = note,
                             onNoteClick = {
-                                onRemoveNote(note)
+                               vm.onRemoveNote(it)
                             }
                         )
                     }
                 }
             }
         }
-    }
-
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun FirstScreenPreview() {
-    PaletteWaveTheme {
-        val context:Context = LocalContext.current
-        NoteScreen(notes = noteDateSource().loadNotes(), onAddNote = {}, onRemoveNote = {}, context = context)
     }
 }
