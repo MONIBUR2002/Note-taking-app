@@ -14,7 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.moniapps.palettewave.model.Note
 import com.moniapps.palettewave.screens.NoteScreen
 import com.moniapps.palettewave.ui.theme.PaletteWaveTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
