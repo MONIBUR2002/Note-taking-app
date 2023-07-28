@@ -5,8 +5,6 @@ l
 <app/src/main/java/com/moniapps/palettewave/ui/theme/Theme.kt,b\3\b3686f58d52ccf955fe1df6364340b525a26e34d
 s
 Capp/src/main/java/com/moniapps/palettewave/components/components.kt,c\9\c961b4fc13f6a0979b2139ca77f154863de824c1
-}
-Mapp/src/main/java/com/moniapps/palettewave/viewmodels/NoteScreenView-model.kt,c\d\cd60b57f7b9c9bb2d6ff3d5489bb63236e3ee3b0
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 P
